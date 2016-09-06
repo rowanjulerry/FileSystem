@@ -1,10 +1,11 @@
 package com.homework;
 
+import com.homework.impl.Directory;
 
 public interface FileSystemElement {
 
-    Type getType();
     int getSize();
-    String getPath();
-    String getName();
+    Directory getParent();
+    boolean isDirectory();
+
 }
