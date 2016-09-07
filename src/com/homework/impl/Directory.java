@@ -7,17 +7,14 @@ import java.util.List;
 
 public class Directory implements FileSystemElement {
 
-    private final boolean isDirectory;
     private final List<FileSystemElement> listOfFileSystemElements = new ArrayList<>();
     private Directory parent;
 
     public Directory() {
-        this.isDirectory = true;
         this.parent = null;
     }
 
     public Directory(Directory parent) {
-        this.isDirectory = true;
         this.parent = parent;
     }
 
@@ -35,8 +32,8 @@ public class Directory implements FileSystemElement {
         return parent;
     }
 
-    @Override
-    public boolean isDirectory() {
-        return isDirectory;
+    public List<FileSystemElement> getDirectoryContent() {
+        return listOfFileSystemElements;
     }
+
 }

@@ -6,6 +6,5 @@ public interface FileSystemElement {
 
     int getSize();
     Directory getParent();
-    boolean isDirectory();
 
 }

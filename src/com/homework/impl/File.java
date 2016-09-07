@@ -2,25 +2,22 @@ package com.homework.impl;
 
 import com.homework.FileSystemElement;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class File implements FileSystemElement {
 
-    private final boolean isDirectory;
+    private Set<Integer> sectors = new TreeSet<>();
     private Directory parent;
     private int size;
 
     public File() {
-        this.isDirectory = false;
-        parent = null;
+        this.parent = null;
     }
 
-    public File(boolean isDirectory) {
-        this.isDirectory = true;
-        parent = null;
+    public File(Directory parent) {
+        this.parent = parent;
     }
 
     @Override
@@ -33,16 +30,7 @@ public class File implements FileSystemElement {
         return parent;
     }
 
-    @Override
-    public boolean isDirectory() {
-        return isDirectory;
-    }
-
-    public BufferedOutputStream getFileContent() throws IOException {
-        return new BufferedOutputStream(new ObjectOutputStream(new OutputStream() {
-            @Override
-            public void write(int b) throws IOException {
-            }
-        }));
+    public OutputStream getFileContent() {
+        return null;
     }
 }
