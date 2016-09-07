@@ -11,12 +11,15 @@ public class File implements FileSystemElement {
     private Set<Integer> sectors = new TreeSet<>();
     private Directory parent;
     private int size;
+    private String name;
 
-    public File() {
+    public File(String name) {
+        this.name = name;
         this.parent = null;
     }
 
-    public File(Directory parent) {
+    public File(String name, Directory parent) {
+        this.name = name;
         this.parent = parent;
     }
 

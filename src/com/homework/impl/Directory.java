@@ -9,12 +9,15 @@ public class Directory implements FileSystemElement {
 
     private final List<FileSystemElement> listOfFileSystemElements = new ArrayList<>();
     private Directory parent;
+    private String name;
 
-    public Directory() {
+    public Directory(String name) {
+        this.name = name;
         this.parent = null;
     }
 
-    public Directory(Directory parent) {
+    public Directory(String name, Directory parent) {
+        this.name = name;
         this.parent = parent;
     }
 
