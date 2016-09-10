@@ -3,6 +3,7 @@ package com.homework.impl;
 import com.homework.FileSystemElement;
 
 import java.io.OutputStream;
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -31,6 +32,16 @@ public class File implements FileSystemElement {
     @Override
     public Directory getParent() {
         return parent;
+    }
+
+    @Override
+    public LocalDateTime getCreationTime() {
+        return null;
+    }
+
+    @Override
+    public LocalDateTime getModificationTime() {
+        return null;
     }
 
     public OutputStream getFileContent() {

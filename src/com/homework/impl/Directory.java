@@ -2,6 +2,7 @@ package com.homework.impl;
 
 import com.homework.FileSystemElement;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +34,16 @@ public class Directory implements FileSystemElement {
     @Override
     public Directory getParent() {
         return parent;
+    }
+
+    @Override
+    public LocalDateTime getCreationTime() {
+        return null;
+    }
+
+    @Override
+    public LocalDateTime getModificationTime() {
+        return null;
     }
 
     public List<FileSystemElement> getDirectoryContent() {
